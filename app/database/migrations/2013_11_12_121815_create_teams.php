@@ -24,7 +24,7 @@ class CreateTeams extends Migration {
 			$table->text('primary_area');
 			$table->string('phone');
 			$table->string('email');
-			$table->string('api_key', 32);
+			$table->string('api_key', 40);
 			$table->binary('private_key');
 			$table->binary('public_key');
 			$table->timestamps();
