@@ -9,7 +9,7 @@ This project is a developing beta project. The public API and underlying data ma
 Introduction
 ------------
 
-Open search & rescue data and metrics, hosted by the [Appalachian Search & Rescue Conference][http://www.asrc.net/].
+Open search & rescue data and metrics, hosted by the [Appalachian Search & Rescue Conference](http://www.asrc.net/).
 
 API
 ---
