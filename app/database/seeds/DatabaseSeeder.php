@@ -20,7 +20,7 @@ class TeamTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('teams')->delete();
+		DB::table('teams')->truncate();
 
 		Team::create(array(
 			'name' 			=> 'Allegheny Mountain Rescue Group',
