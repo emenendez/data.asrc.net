@@ -1,6 +1,6 @@
 <?php
 
-class TeamController extends \BaseController {
+class TeamsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.

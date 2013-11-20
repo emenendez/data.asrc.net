@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTeams extends Migration {
+class CreateTeamsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateTeams extends Migration {
 	public function up()
 	{
 		// Create teams table
-		Schema::create('teams', function($table){
+		Schema::create('Teams', function($table){
 			$table->increments('id');
 			$table->string('name');
 			$table->string('acronym');
@@ -39,7 +39,7 @@ class CreateTeams extends Migration {
 	public function down()
 	{
 		// Drop teams table
-		Schema::drop('teams');
+		Schema::drop('Teams');
 	}
 
 }

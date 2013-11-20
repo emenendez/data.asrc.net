@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStates extends Migration {
+class CreateStatesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,14 @@ class CreateStates extends Migration {
 	public function up()
 	{
 		// Create states table
-		Schema::create('states', function($table) {
+		Schema::create('States', function($table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('acronym');
 		});
 
 		// Populate with data
-		DB::table('states')->insert(array(
+		DB::table('States')->insert(array(
 		    array('name' => 'Alabama', 'acronym' => 'AL'),
 			array('name' => 'Alaska', 'acronym' => 'AK'),
 			array('name' => 'American Samoa', 'acronym' => 'AS'),
@@ -91,7 +91,7 @@ class CreateStates extends Migration {
 	public function down()
 	{
 		// Drop states table
-		Schema::drop('states');
+		Schema::drop('States');
 	}
 
 }

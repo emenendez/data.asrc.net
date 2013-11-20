@@ -11,16 +11,16 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		$this->call('TeamTableSeeder');
+		$this->call('TeamsTableSeeder');
 	}
 
 }
 
-class TeamTableSeeder extends Seeder {
+class TeamsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('teams')->truncate();
+		DB::table('Teams')->truncate();
 
 		Team::create(array(
 			'name' 			=> 'Allegheny Mountain Rescue Group',
