@@ -12,14 +12,14 @@ class CreateStatesTable extends Migration {
 	public function up()
 	{
 		// Create states table
-		Schema::create('States', function($table) {
+		Schema::create('states', function($table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('acronym');
 		});
 
 		// Populate with data
-		DB::table('States')->insert(array(
+		DB::table('states')->insert(array(
 		    array('name' => 'Alabama', 'acronym' => 'AL'),
 			array('name' => 'Alaska', 'acronym' => 'AK'),
 			array('name' => 'American Samoa', 'acronym' => 'AS'),
@@ -91,7 +91,7 @@ class CreateStatesTable extends Migration {
 	public function down()
 	{
 		// Drop states table
-		Schema::drop('States');
+		Schema::drop('states');
 	}
 
 }

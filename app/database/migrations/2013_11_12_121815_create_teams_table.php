@@ -12,7 +12,7 @@ class CreateTeamsTable extends Migration {
 	public function up()
 	{
 		// Create teams table
-		Schema::create('Teams', function($table){
+		Schema::create('teams', function($table){
 			$table->increments('id');
 			$table->string('name');
 			$table->string('acronym');
@@ -39,7 +39,7 @@ class CreateTeamsTable extends Migration {
 	public function down()
 	{
 		// Drop teams table
-		Schema::drop('Teams');
+		Schema::drop('teams');
 	}
 
 }

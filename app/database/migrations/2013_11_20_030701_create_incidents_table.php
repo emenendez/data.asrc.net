@@ -12,7 +12,7 @@ class CreateIncidentsTable extends Migration {
 	 */
 	public function up()
 	{
-		CustomSchema::create('Incidents', function($table) {
+		CustomSchema::create('incidents', function($table) {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('number');
@@ -53,7 +53,7 @@ class CreateIncidentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('Incidents');
+		Schema::drop('incidents');
 	}
 
 }
