@@ -1,5 +1,7 @@
 <?php
 
+use Emenendez\CustomTypes\DateTimeRange;
+
 class DatabaseSeeder extends Seeder {
 
 	/**
@@ -12,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('TeamsTableSeeder');
+		$this->call('IncidentsTableSeeder');
 	}
 
 }
@@ -38,4 +41,43 @@ class TeamsTableSeeder extends Seeder {
 			'public_key' 	=> 'test public key',
 			));
 	}
+}
+
+class IncidentsTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('Incidents')->truncate();
+
+		Incident::create(array(
+			'name' 							=> 'Incident 1',
+			'number'						=> 'VA-001-13',
+			'last_known_time' 				=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'reported_time'					=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'point_last_seen'				=> '',
+			'find_location'					=> '',
+			'find_team_kind'				=> '',
+			'find_resource_kind'			=> '',
+			'441_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'442_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'443_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'445_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_transportation'		=> '',
+			'subject_age'					=> 18,
+			'subject_name'					=> 'John Doe',
+			'subject_gender'				=> 'Male',
+			'subject_mental_status'			=> '',
+			'subject_group_size'			=> 1,
+			'subject_activity'				=> '',
+			'subject_category'				=> '',
+			'subject_destination'			=> '',
+			'subject_behavior_hindsight'	=> '',
+			'subject_lost_time'				=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_injury_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_injury_kind'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_immobile_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_death_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			));
+	}
+
 }
