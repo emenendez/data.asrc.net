@@ -1,0 +1,20 @@
+{
+    "name": "emenendez/custom-types",
+    "description": "Custom data types for Laravel 4",
+    "authors": [
+        {
+            "name": "Eric Menendez",
+            "email": "ericmenendez@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Emenendez\\CustomTypes": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
