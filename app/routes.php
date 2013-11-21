@@ -18,5 +18,5 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api/v1'), function()
 {
-	Route::resource('team', 'TeamsController', array('except' => array('edit', 'destroy')));
+	Route::resource('teams', 'TeamsController', array('except' => array('edit', 'destroy')));
 });
