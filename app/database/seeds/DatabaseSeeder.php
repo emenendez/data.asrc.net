@@ -23,7 +23,7 @@ class TeamsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('Teams')->truncate();
+		DB::table('teams')->truncate();
 
 		Team::create(array(
 			'name' 			=> 'Allegheny Mountain Rescue Group',
@@ -47,7 +47,7 @@ class IncidentsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('Incidents')->truncate();
+		DB::table('incidents')->truncate();
 
 		Incident::create(array(
 			'name' 							=> 'Incident 1',
