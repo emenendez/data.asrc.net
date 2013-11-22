@@ -4,3 +4,4 @@
 /app/config/production
 .DS_Store
 Thumbs.db
+sync-vendor
