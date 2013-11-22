@@ -12,7 +12,7 @@ class Incident extends CustomModel {
 		'subject_group_size'	=> 'integer',
 		);
 
-	protected $dateTimeRanges = array(
+	protected static $dateTimeRanges = array(
 		'last_known_time',
 		'reported_time',
 		'441_time',

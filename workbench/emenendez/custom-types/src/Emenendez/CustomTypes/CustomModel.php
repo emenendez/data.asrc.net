@@ -9,7 +9,7 @@ class CustomModel extends Model {
 	/**
 	 * Array to store list of attributes which should be treated as date ranges
 	 */
-	protected $dateTimeRanges = array();
+	protected static $dateTimeRanges = array();
 
 	/**
 	 * Array to store list of attributes which should be treated as json
@@ -34,12 +34,12 @@ class CustomModel extends Model {
 	{
 		parent::__construct($attributes);
 
-		foreach($this->dateTimeRanges as $attribute)
+		foreach(static::$dateTimeRanges as $attribute)
 		{
 			$this->hidden[] = $attribute . static::BEGIN;
 			$this->hidden[] = $attribute . static::END;
 		}
-		$this->appends = array_merge($this->appends, $this->dateTimeRanges);
+		$this->appends = array_merge($this->appends, static::$dateTimeRanges);
 	}
 
 	/**
@@ -84,7 +84,7 @@ class CustomModel extends Model {
     	else if (preg_match('/^set(.+)Attribute$/', $name, $matches))
     	{
     		$attribute = snake_case($matches[1]);
-    		
+
     		if ($this->isJson($attribute))
     		{
     			$this->attributes[$attribute] = json_encode($arguments[0]);
@@ -100,7 +100,7 @@ class CustomModel extends Model {
 	 */
 	private function isDateTimeRange($key)
 	{
-		return in_array($key, $this->dateTimeRanges);
+		return in_array($key, static::$dateTimeRanges);
 	}
 
 	/**
