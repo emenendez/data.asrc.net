@@ -40,7 +40,7 @@ class CalloutsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		
+		return Callout::find($id)->with('team', 'incident')->get();
 	}
 
 	/**

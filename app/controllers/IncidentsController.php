@@ -41,6 +41,7 @@ class IncidentsController extends BaseController {
 	 */
 	public function show($id)
 	{
+		return Incident::find($id)->with('callouts', 'callouts.team')->get();
         
 	}
 

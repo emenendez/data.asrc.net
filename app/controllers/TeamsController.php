@@ -41,7 +41,7 @@ class TeamsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		return Team::find($id)->with('callouts', 'callouts.incident')->get();
 	}
 
 	/**
