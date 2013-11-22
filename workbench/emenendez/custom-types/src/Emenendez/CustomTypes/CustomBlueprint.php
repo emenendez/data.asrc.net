@@ -14,8 +14,8 @@ class CustomBlueprint extends Blueprint {
 	 */
 	public function dateTimeRange($column)
 	{
-		$this->addColumn('dateTime', $column . '_begin');
-		$this->addColumn('dateTime', $column . '_end');
+		$this->addColumn('dateTime', $column . '_begin')->nullable();
+		$this->addColumn('dateTime', $column . '_end')->nullable();
 	}
 
 }
