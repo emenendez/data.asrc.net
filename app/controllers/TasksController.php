@@ -1,6 +1,6 @@
 <?php
 
-class IncidentsController extends BaseController {
+class TasksController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,8 +9,7 @@ class IncidentsController extends BaseController {
 	 */
 	public function index()
 	{
-		// Show basic information about all incidents
-		return Incident::all();
+        return Task::all();
 	}
 
 	/**
@@ -20,7 +19,7 @@ class IncidentsController extends BaseController {
 	 */
 	public function create()
 	{
-        
+
 	}
 
 	/**
@@ -41,8 +40,8 @@ class IncidentsController extends BaseController {
 	 */
 	public function show($id)
 	{
-		return Incident::find($id)->with('callouts', 'callouts.team', 'callouts.responders', 'tasks')->get();
-        
+		return Task::find($id)->with('incident')->get();
+
 	}
 
 	/**

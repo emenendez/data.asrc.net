@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('IncidentsTableSeeder');
 		$this->call('CalloutsTableSeeder');
 		$this->call('RespondersTableSeeder');
+		$this->call('TasksTableSeeder');
 	}
 
 }
@@ -119,6 +120,24 @@ class RespondersTableSeeder extends Seeder {
 
 		$responder->callout()->associate(Callout::all()->first());
 		$responder->save();
+	}
+
+}
+
+class TasksTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('tasks')->delete();
+
+		$task = new Task(array(
+			'number' => 'T01-01',
+			'description' => null,
+			'area' => null,
+			));
+
+		$task->incident()->associate(Incident::all()->first());
+		$task->save();
 	}
 
 }

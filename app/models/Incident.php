@@ -36,4 +36,8 @@ class Incident extends CustomModel {
 		return $this->hasMany('Callout');
 	}
 
+	public function tasks() {
+		return $this->hasMany('Task');
+	}
+
 }
