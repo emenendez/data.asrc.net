@@ -1,8 +1,12 @@
 <?php
 
-class Team extends Eloquent {
+use Emenendez\CustomTypes\CustomModel;
+
+class Team extends CustomModel {
 
 	protected $hidden = array('api_key', 'private_key');
+
+	protected static $json = array('primary_area');
 
 	public static $rules = array(
 		'name' 			=> 'required',
@@ -11,15 +15,6 @@ class Team extends Eloquent {
 		'email' 		=> 'required|email',
 	);
 
-	public function getPrimaryAreaAttribute($value)
-	{
-		return json_decode($value);
-	}
-
-	public function setPrimaryAreaAttribute($value)
-	{
-		$this->attributes['primary_area'] = json_encode($value);
-	}
 }
 
 ?>
