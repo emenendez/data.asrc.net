@@ -1,21 +1,21 @@
 <?php
 
-class CalloutsController extends BaseController {
+class RespondersController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
-	 * @return Callout
+	 * @return Response
 	 */
 	public function index()
 	{
-        return Callout::all();
+        return Responder::all();
 	}
 
 	/**
 	 * Show the form for creating a new resource.
 	 *
-	 * @return Callout
+	 * @return Response
 	 */
 	public function create()
 	{
@@ -25,7 +25,7 @@ class CalloutsController extends BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @return Callout
+	 * @return Response
 	 */
 	public function store()
 	{
@@ -36,18 +36,18 @@ class CalloutsController extends BaseController {
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id
-	 * @return Callout
+	 * @return Response
 	 */
 	public function show($id)
 	{
-		return Callout::find($id)->with('team', 'incident', 'responders')->get();
+		return Responder::find($id)->with('callout', 'callout.incident', 'callout.team')->get();
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
-	 * @return Callout
+	 * @return Response
 	 */
 	public function update($id)
 	{

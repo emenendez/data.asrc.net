@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('TeamsTableSeeder');
 		$this->call('IncidentsTableSeeder');
 		$this->call('CalloutsTableSeeder');
+		$this->call('RespondersTableSeeder');
 	}
 
 }
@@ -99,6 +100,25 @@ class CalloutsTableSeeder extends Seeder {
 		$callout->team()->associate(Team::all()->first());
 		$callout->incident()->associate(Incident::all()->first());
 		$callout->save();
+	}
+
+}
+
+class RespondersTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('responders')->delete();
+
+		$responder = new Responder(array(
+			'name' => 'Joe Responder',
+			'kind' => null,
+			'miles_traveled' => null,
+			'time_on_scene' => new DateTimeRange(),
+			));
+
+		$responder->callout()->associate(Callout::all()->first());
+		$responder->save();
 	}
 
 }

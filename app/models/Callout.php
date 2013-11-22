@@ -24,6 +24,10 @@ class Callout extends CustomModel {
 		return $this->belongsTo('Incident');
 	}
 
+	public function responders() {
+		return $this->hasMany('Responder');
+	}
+
 }
 
 ?>
