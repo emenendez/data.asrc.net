@@ -32,4 +32,8 @@ class Incident extends CustomModel {
 		'subject_group_size'	=> 'integer',
 		);
 
+	public function callouts() {
+		return $this->hasMany('Callout');
+	}
+
 }

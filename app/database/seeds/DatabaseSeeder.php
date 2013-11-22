@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('TeamsTableSeeder');
 		$this->call('IncidentsTableSeeder');
+		$this->call('CalloutsTableSeeder');
 	}
 
 }
@@ -23,7 +24,7 @@ class TeamsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('teams')->truncate();
+		DB::table('teams')->delete();
 
 		Team::create(array(
 			'name' 			=> 'Allegheny Mountain Rescue Group',
@@ -47,7 +48,7 @@ class IncidentsTableSeeder extends Seeder {
 
 	public function run()
 	{
-		DB::table('incidents')->truncate();
+		DB::table('incidents')->delete();
 
 		Incident::create(array(
 			'name' 							=> 'Incident 1',
@@ -78,6 +79,26 @@ class IncidentsTableSeeder extends Seeder {
 			'subject_immobile_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
 			'subject_death_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
 			));
+	}
+}
+
+class CalloutsTableSeeder extends Seeder {
+
+	public function run()
+	{
+		DB::table('callouts')->delete();
+
+		$callout = new Callout(array(
+			'111_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'222_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'331_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'332_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'333_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			));
+
+		$callout->team()->associate(Team::all()->first());
+		$callout->incident()->associate(Incident::all()->first());
+		$callout->save();
 	}
 
 }

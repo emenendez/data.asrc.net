@@ -15,6 +15,10 @@ class Team extends CustomModel {
 		'email' 		=> 'required|email',
 	);
 
+	public function callouts() {
+		return $this->hasMany('Callout');
+	}
+
 }
 
 ?>
