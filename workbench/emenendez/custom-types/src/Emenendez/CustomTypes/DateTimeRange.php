@@ -10,9 +10,9 @@ class DateTimeRange implements JsonSerializable {
 	private $begin;
 	private $end;
 
-	public function __construct($begin, $end) {
-		$this->begin = new Carbon($begin);
-		$this->end = new Carbon($end);
+	public function __construct($begin = null, $end = null) {
+		$this->begin = $begin ? new Carbon($begin) : null;
+		$this->end = $end ? new Carbon($end) : null;
 	}
 	
 	public function getBegin() {
@@ -24,14 +24,16 @@ class DateTimeRange implements JsonSerializable {
 	}
 
 	public function __toString() {
-		return $this->begin->toDateTimeString() . ' - ' . $this->end->toDateTimeString();
+		return $this->begin ?
+			( $this->begin->toDateTimeString() . ' - ' . $this->end->toDateTimeString() )
+			: null;
 	}
 
 	public function jsonSerialize()
 	{
-		return array(
+		return $this->begin ? array(
 			'begin' => $this->begin->toDateTimeString(),
 			'end' => $this->end->toDateTimeString(),
-			);
+			) : null;
 	}
 }

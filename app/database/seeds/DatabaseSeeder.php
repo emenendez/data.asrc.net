@@ -53,16 +53,16 @@ class IncidentsTableSeeder extends Seeder {
 		Incident::create(array(
 			'name' 							=> null,
 			'number'						=> 'VA-001-13',
-			'last_known_time' 				=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'reported_time'					=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'last_known_time' 				=> new DateTimeRange(),
+			'reported_time'					=> new DateTimeRange(),
 			'point_last_seen'				=> null,
 			'find_location'					=> null,
 			'find_team_kind'				=> null,
 			'find_resource_kind'			=> null,
-			'441_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'442_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'443_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'445_time'						=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'441_time'						=> new DateTimeRange(),
+			'442_time'						=> new DateTimeRange(),
+			'443_time'						=> new DateTimeRange(),
+			'445_time'						=> new DateTimeRange(),
 			'subject_transportation'		=> null,
 			'subject_age'					=> null,
 			'subject_name'					=> 'John Doe',
@@ -73,11 +73,11 @@ class IncidentsTableSeeder extends Seeder {
 			'subject_category'				=> null,
 			'subject_destination'			=> null,
 			'subject_behavior_hindsight'	=> null,
-			'subject_lost_time'				=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'subject_injury_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'subject_injury_kind'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'subject_immobile_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'subject_death_time'			=> new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'subject_lost_time'				=> new DateTimeRange(),
+			'subject_injury_time'			=> new DateTimeRange(),
+			'subject_injury_kind'			=> new DateTimeRange(),
+			'subject_immobile_time'			=> new DateTimeRange(),
+			'subject_death_time'			=> new DateTimeRange(),
 			));
 	}
 }
@@ -89,11 +89,11 @@ class CalloutsTableSeeder extends Seeder {
 		DB::table('callouts')->delete();
 
 		$callout = new Callout(array(
-			'111_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'222_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'331_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'332_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
-			'333_time' => new DateTimeRange('2013-01-01 00:00:00', '2013-01-02 00:00:00'),
+			'111_time' => new DateTimeRange(),
+			'222_time' => new DateTimeRange(),
+			'331_time' => new DateTimeRange(),
+			'332_time' => new DateTimeRange(),
+			'333_time' => new DateTimeRange(),
 			));
 
 		$callout->team()->associate(Team::all()->first());
