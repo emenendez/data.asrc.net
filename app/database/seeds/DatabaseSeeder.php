@@ -138,6 +138,7 @@ class TasksTableSeeder extends Seeder {
 
 		$task->incident()->associate(Incident::all()->first());
 		$task->save();
+		$task->responders()->attach(Responder::all()->first());
 	}
 
 }

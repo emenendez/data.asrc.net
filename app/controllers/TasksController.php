@@ -40,7 +40,7 @@ class TasksController extends BaseController {
 	 */
 	public function show($id)
 	{
-		return Task::find($id)->with('incident')->get();
+		return Task::find($id)->with('incident', 'responders')->get();
 
 	}
 

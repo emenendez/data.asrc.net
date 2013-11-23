@@ -14,4 +14,8 @@ class Task extends CustomModel {
 		return $this->belongsTo('Incident');
 	}
 
+	public function responders() {
+		return $this->belongsToMany('Responder')->withPivot('track');
+	}
+
 }

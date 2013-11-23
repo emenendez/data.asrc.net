@@ -40,7 +40,7 @@ class RespondersController extends BaseController {
 	 */
 	public function show($id)
 	{
-		return Responder::find($id)->with('callout', 'callout.incident', 'callout.team')->get();
+		return Responder::find($id)->with('callout', 'callout.incident', 'callout.team', 'tasks')->get();
 	}
 
 	/**
