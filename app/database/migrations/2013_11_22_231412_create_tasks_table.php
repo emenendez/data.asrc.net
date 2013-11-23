@@ -17,6 +17,7 @@ class CreateTasksTable extends Migration {
 			$table->string('number')->nullable();
 			$table->text('description')->nullable();
 			$table->text('area')->nullable();
+			$table->text('track')->nullable();
 			$table->timestamps();
 
 			$table->foreign('incident_id')

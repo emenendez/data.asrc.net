@@ -17,7 +17,7 @@ class Responder extends CustomModel {
 	}
 
 	public function tasks() {
-		return $this->belongsToMany('Task')->withPivot('track');
+		return $this->belongsToMany('Task');
 	}
 
 }

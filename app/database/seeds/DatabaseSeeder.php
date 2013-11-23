@@ -134,6 +134,7 @@ class TasksTableSeeder extends Seeder {
 			'number' => 'T01-01',
 			'description' => null,
 			'area' => null,
+			'track' => null,
 			));
 
 		$task->incident()->associate(Incident::all()->first());

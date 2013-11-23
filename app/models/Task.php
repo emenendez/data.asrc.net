@@ -6,7 +6,7 @@ class Task extends CustomModel {
 
 	protected $guarded = array();
 
-	protected static $json = array('area');
+	protected static $json = array('area', 'track');
 
 	public static $rules = array();
 
@@ -15,7 +15,7 @@ class Task extends CustomModel {
 	}
 
 	public function responders() {
-		return $this->belongsToMany('Responder')->withPivot('track');
+		return $this->belongsToMany('Responder');
 	}
 
 }

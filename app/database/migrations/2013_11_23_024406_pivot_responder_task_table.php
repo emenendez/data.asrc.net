@@ -15,7 +15,6 @@ class PivotResponderTaskTable extends Migration {
 			$table->increments('id');
 			$table->integer('responder_id')->unsigned()->index();
 			$table->integer('task_id')->unsigned()->index();
-			$table->text('track')->nullable();
 
 			$table->foreign('responder_id')
 				  ->references('id')->on('responders')
