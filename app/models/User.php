@@ -1,9 +1,10 @@
 <?php
 
+use Emenendez\CustomTypes\CustomModel;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends CustomModel implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -18,6 +19,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
+
+	protected static $json = array('area');
 
 	/**
 	 * Get the unique identifier for the user.
@@ -47,6 +50,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+	public function setPasswordAttribute($value)
+	{
+		$this->attributes['password'] = Hash::make($value);
+	}
+
+	public function teams()
+	{
+		return $this->belongsToMany('Team')->withPivot('is_admin');
 	}
 
 }

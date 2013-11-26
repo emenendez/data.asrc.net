@@ -22,9 +22,6 @@ class CreateTeamsTable extends Migration {
 			$table->string('state', 2)->nullable();
 			$table->string('zip', 5)->nullable();
 			$table->text('primary_area')->nullable();
-			$table->string('phone')->nullable();
-			$table->string('email');
-			$table->string('api_key', 40)->nullable();
 			$table->binary('private_key')->nullable();
 			$table->binary('public_key')->nullable();
 			$table->timestamps();

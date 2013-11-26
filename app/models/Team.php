@@ -4,7 +4,7 @@ use Emenendez\CustomTypes\CustomModel;
 
 class Team extends CustomModel {
 
-	protected $hidden = array('api_key', 'private_key');
+	protected $hidden = array('private_key');
 
 	protected static $json = array('primary_area');
 
@@ -12,11 +12,14 @@ class Team extends CustomModel {
 		'name' 			=> 'required',
 		'state' 		=> 'exists:states,acronym',
 		'zip' 			=> 'integer|size:5',
-		'email' 		=> 'required|email',
 	);
 
 	public function callouts() {
 		return $this->hasMany('Callout');
+	}
+
+	public function users() {
+		return $this->belongsToMany('User')->withPivot('is_admin');
 	}
 
 }
