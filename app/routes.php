@@ -25,6 +25,7 @@ Route::group(array('prefix' => 'api/v1'), function()
 	Route::resource('incidents.responders', 'IncidentsRespondersController', array('except' => array('edit', 'destroy')));
 	Route::resource('incidents.tasks', 'IncidentsTasksController', array('except' => array('edit', 'destroy')));
 	Route::resource('callouts', 'CalloutsController', array('except' => array('edit', 'destroy')));
+	Route::resource('callouts.responders', 'CalloutsRespondersController', array('except' => array('edit', 'destroy')));
 	Route::resource('responders', 'RespondersController', array('except' => array('edit', 'destroy')));
 	Route::resource('tasks', 'TasksController', array('except' => array('edit', 'destroy')));
 });
