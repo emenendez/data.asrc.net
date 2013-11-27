@@ -1,16 +1,15 @@
 <?php
 
-class IncidentsController extends BaseController {
+class IncidentsCalloutsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
-		// Show basic information about all incidents
-		return Incident::all();
+		return Incident::find($id)->callouts()->with('team')->get();
 	}
 
 	/**
@@ -39,9 +38,9 @@ class IncidentsController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($incident_id, $callout_id)
 	{
-		return Incident::find($id);
+		return Incident::find($incident_id)->callouts()->whereId($callout_id)->with('team')->get();
 	}
 
 	/**
