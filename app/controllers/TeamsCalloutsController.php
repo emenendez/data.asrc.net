@@ -1,16 +1,15 @@
 <?php
 
-class TeamsController extends \BaseController {
+class TeamsCalloutsController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
-		// Show basic information for all teams
-		return Team::all();
+		return Team::find($id)->callouts()->with('incident')->get();
 	}
 
 	/**
@@ -39,9 +38,9 @@ class TeamsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($team_id, $callout_id)
 	{
-		return Team::find($id);
+		return Team::find($team_id)->callouts()->whereId($callout_id)->with('incident')->get();
 	}
 
 	/**
