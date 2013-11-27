@@ -1,15 +1,15 @@
 <?php
 
-class RespondersController extends BaseController {
+class RespondersTasksController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($id)
 	{
-        return Responder::all();
+        return Responder::find($id)->tasks()->get();
 	}
 
 	/**
@@ -38,9 +38,9 @@ class RespondersController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($responder_id, $task_id)
 	{
-		return Responder::find($id)->with('callout', 'callout.incident', 'callout.team')->get();
+		return Responder::find($responder_id)->tasks()->whereTaskId($task_id)->get();
 	}
 
 	/**
