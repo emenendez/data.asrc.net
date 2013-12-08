@@ -39,9 +39,9 @@ Route::filter('auth', function()
 });
 
 
-Route::filter('auth.basic', function()
+Route::filter('basic.once', function()
 {
-	return Auth::basic();
+	return Auth::onceBasic('api_key');
 });
 
 /*

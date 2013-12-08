@@ -39,7 +39,8 @@ class User extends CustomModel implements UserInterface, RemindableInterface {
 	 */
 	public function getAuthPassword()
 	{
-		return $this->password;
+		// Always an empty string
+		return Hash::make('');
 	}
 
 	/**
