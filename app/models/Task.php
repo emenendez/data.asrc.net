@@ -4,7 +4,7 @@ use \Emenendez\CustomTypes\CustomModel;
 
 class Task extends CustomModel {
 
-	protected $guarded = array();
+	protected $guarded = array('id');
 
 	protected static $json = array('area', 'track');
 

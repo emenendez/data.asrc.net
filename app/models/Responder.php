@@ -4,7 +4,7 @@ use \Emenendez\CustomTypes\CustomModel;
 
 class Responder extends CustomModel {
 
-	protected $guarded = array();
+	protected $guarded = array('id');
 
 	protected static $dateTimeRanges = array('time_on_scene');
 

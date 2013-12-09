@@ -4,7 +4,7 @@ use \Emenendez\CustomTypes\CustomModel;
 
 class Callout extends CustomModel {
 
-	protected $guarded = array();
+	protected $guarded = array('id');
 
 	protected static $dateTimeRanges = array(
 		'111_time',

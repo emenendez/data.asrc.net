@@ -4,7 +4,7 @@ use Emenendez\CustomTypes\CustomModel;
 
 class Incident extends CustomModel {
 
-	protected $guarded = array();
+	protected $guarded = array('id');
 
 	protected static $dateTimeRanges = array(
 		'last_known_time',

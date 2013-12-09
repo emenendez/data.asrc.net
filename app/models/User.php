@@ -20,6 +20,8 @@ class User extends CustomModel implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password');
 
+	protected $guarded = array('id', 'api_key', 'is_global_admin');
+
 	protected static $json = array('area');
 
 	/**

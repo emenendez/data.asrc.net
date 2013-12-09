@@ -6,6 +6,8 @@ class Team extends CustomModel {
 
 	protected $hidden = array('private_key');
 
+	protected $guarded = array('id', 'private_key', 'public_key');
+
 	protected static $json = array('primary_area');
 
 	public static $rules = array(
