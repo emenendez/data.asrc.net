@@ -15,7 +15,7 @@ class PivotTeamUserTable extends Migration {
 			$table->increments('id');
 			$table->integer('team_id')->unsigned()->index();
 			$table->integer('user_id')->unsigned()->index();
-			$table->boolean('is_admin')->default(false);
+			$table->boolean('is_team_admin')->default(false);
 			$table->timestamps();
 
 			$table->foreign('team_id')

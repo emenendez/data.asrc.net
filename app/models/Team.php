@@ -19,7 +19,7 @@ class Team extends CustomModel {
 	}
 
 	public function users() {
-		return $this->belongsToMany('User')->withPivot('is_admin');
+		return $this->belongsToMany('User')->withPivot('is_team_admin');
 	}
 
 }

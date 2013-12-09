@@ -149,16 +149,17 @@ class UsersTableSeeder extends Seeder {
 		DB::table('users')->delete();
 
 		$user = new User(array(
-			'email' 		=> 'test@email.com',
-			'password'		=> 'password',
-			'name'			=> 'Joe SAR',
-			'phone' 		=> '+1 (888) 333-4282',
-			'api_key' 		=> sha1(Str::random(40)),
-			'area'			=> null,
+			'email'           => 'test@email.com',
+			'password'        => 'password',
+			'name'            => 'Joe SAR',
+			'phone'           => '+1 (888) 333-4282',
+			'api_key'         => sha1(Str::random(40)),
+			'area'            => null,
+			'is_global_admin' => true,
 			));
 
 		$user->save();
-		$user->teams()->attach(Team::all()->first(), array('is_admin' => true));
+		$user->teams()->attach(Team::all()->first(), array('is_team_admin' => true));
 	}
 
 }

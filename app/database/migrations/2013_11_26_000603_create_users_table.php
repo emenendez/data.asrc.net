@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration {
 			$table->string('phone')->nullable();
 			$table->string('api_key', 40);
 			$table->text('area')->nullable();
+			$table->boolean('is_global_admin')->default(false);
 			$table->timestamps();
 		});
 	}

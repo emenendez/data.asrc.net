@@ -60,7 +60,7 @@ class User extends CustomModel implements UserInterface, RemindableInterface {
 
 	public function teams()
 	{
-		return $this->belongsToMany('Team')->withPivot('is_admin');
+		return $this->belongsToMany('Team')->withPivot('is_team_admin');
 	}
 
 }
