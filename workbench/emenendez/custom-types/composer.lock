@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "24ac5601b3f6781c8b54a12ed5e4ddb7f34d7953"
+                "reference": "11ae214c05cce720abeac5443df3f1c27c7eae31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/24ac5601b3f6781c8b54a12ed5e4ddb7f34d7953",
-                "reference": "24ac5601b3f6781c8b54a12ed5e4ddb7f34d7953",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/11ae214c05cce720abeac5443df3f1c27c7eae31",
+                "reference": "11ae214c05cce720abeac5443df3f1c27c7eae31",
                 "shasum": ""
             },
             "require": {
@@ -54,7 +54,7 @@
                     "role": "Developer"
                 }
             ],
-            "time": "2013-11-20 14:44:26"
+            "time": "2013-12-05 19:57:51"
         }
     ],
     "packages-dev": [
